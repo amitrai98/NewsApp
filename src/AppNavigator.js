@@ -2,11 +2,12 @@ import { createAppContainer } from "react-navigation";
 import NewsList from "./screens/newslist/NewsList";
 import { createStackNavigator } from "react-navigation-stack";
 
-//   import UserDetails from "./userdetails/UserDetails";
+  import NewsDetail from "./screens/newsdetail/NewsDetail";
 
 const StackNavigator = createStackNavigator(
   {
-    NewsList: { screen: NewsList }
+    NewsList: { screen: NewsList },
+    NewsDetail: {screen:NewsDetail}
   },
   {
     initialRouteName: "NewsList",

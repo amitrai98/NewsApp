@@ -34,6 +34,10 @@ export class NewsList extends Component<Props> {
     }
   }
 
+  openNewsDetail(newsItem){
+    this.props.navigation.navigate("NewsDetail",{newsItem:newsItem});
+  }
+
   render() {
     const { navigation, isFetching } = this.props;
     const { newsList,refresing } = this.state;
@@ -45,7 +49,7 @@ export class NewsList extends Component<Props> {
           <FlatList
             data={newsList}
             renderItem={({ item, index }) => (
-              <NewsListItem newsItem={item} index={index} />
+              <NewsListItem newsItem={item} index={index} openNewsDetail={newsItem=>this.openNewsDetail(newsItem)} />
             )}
             refreshing={refresing}
 

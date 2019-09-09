@@ -4,11 +4,16 @@ import { Image } from "native-base";
 import { isEmpty } from "../../../util/Utility";
 
 const newsItem = props => {
-  const { newsItem } = props;
+  const { newsItem, openNewsDetail,index } = props;
   let imageUrl = "";
   
   return (
     <TouchableOpacity
+    onPress={
+        ()=>{
+            openNewsDetail(newsItem)
+            }
+        }
       style={{
         flex: 1,
         backgroundColor: "gray",
