@@ -1,13 +1,12 @@
 import React from "react";
 import HeaderStyle from "./HeaderStyle";
-import { View, Text, StatusBar, Image } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { View, Text, StatusBar, Image, TouchableOpacity } from "react-native";
 import Images from "../util/Images";
-
+import { Header } from "native-base";
 const AppHeader = props => {
   const { title, titleStyle, showBackButton, navigation } = props;
   return (
-    <View style={HeaderStyle.parentContainer}>
+    <Header style={HeaderStyle.parentContainer}>
       <StatusBar barStyle="light-content" />
 
       <View
@@ -40,7 +39,7 @@ const AppHeader = props => {
         </View>
         <View style={{ flex: 0.5 }}></View>
       </View>
-    </View>
+    </Header>
   );
 };
 

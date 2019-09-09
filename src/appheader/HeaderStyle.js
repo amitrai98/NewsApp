@@ -3,8 +3,8 @@ import { StyleSheet } from "react-native";
 const HeaderStyle = StyleSheet.create({
   parentContainer: {
     backgroundColor: "green",
-    height: "10%",
-    justifyContent: "flex-end"
+    justifyContent: "flex-end",
+    height: 40
   },
 
   titleDefaultStyle: {

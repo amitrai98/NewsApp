@@ -42,11 +42,14 @@ export default class ApiHandler {
   /**
    * Gets list of news articles from server.   *
    */
-  getNewsList() {
+  getNewsList(since) {
     return new Promise((resolve, reject) => {
-      postData = { user_id: userId, loggedin_user_id: loggedin_user_id };
+      let url =
+        ApiConst.BASE_URL +
+        `/svc/mostpopular/v2/viewed/${since}.json?api-key=` +
+        ApiConst.TOKEN;
       axios
-        .post(ApiConst.BASE_URL + "/svc/mostpopular/v2/viewed/1.json", postData)
+        .get(url)
         .then(function(response) {
           return resolve({ response });
         })
