@@ -5,7 +5,6 @@ var authToken = null;
 
 export default class ApiHandler {
   instance = null;
-  reservationLimit = 20; // number of reservations to be fetched from api
 
   /**
    * provides token for api calls
@@ -36,24 +35,18 @@ export default class ApiHandler {
    */
   getHeaderWithToken() {
     return {
-      token: authToken
+      api: authToken
     };
   }
 
   /**
-   * Logs user in to the app.
-   * @param {users's email address} email
-   * @param {user's password} password
+   * Gets list of news articles from server.   *
    */
-  getUserData(userId, loggedin_user_id) {
+  getNewsList() {
     return new Promise((resolve, reject) => {
       postData = { user_id: userId, loggedin_user_id: loggedin_user_id };
       axios
-        .post(
-          ApiConst.BASE_URL +
-            "/test_staging_merged/ocr-web/mbapiv2/mbapiv2directory/getStaticDirectoryData",
-          postData
-        )
+        .post(ApiConst.BASE_URL + "/svc/mostpopular/v2/viewed/1.json", postData)
         .then(function(response) {
           return resolve({ response });
         })
