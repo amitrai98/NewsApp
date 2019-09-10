@@ -2,7 +2,6 @@ import React from "react";
 import HeaderStyle from "./HeaderStyle";
 import { View, Text, StatusBar, Image, TouchableOpacity } from "react-native";
 import Images from "../util/Images";
-// import { Header } from "native-base";
 const AppHeader = props => {
   const { title, titleStyle, showBackButton, navigation } = props;
   return (

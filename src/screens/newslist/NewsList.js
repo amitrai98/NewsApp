@@ -48,6 +48,7 @@ export class NewsList extends Component<Props> {
         <View style={{ flex: 1 }}>
           <FlatList
             data={newsList}
+            keyExtractor={(item, index) => index.toString()}
             renderItem={({ item, index }) => (
               <NewsListItem
                 newsItem={item}
