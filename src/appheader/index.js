@@ -2,11 +2,11 @@ import React from "react";
 import HeaderStyle from "./HeaderStyle";
 import { View, Text, StatusBar, Image, TouchableOpacity } from "react-native";
 import Images from "../util/Images";
-import { Header } from "native-base";
+// import { Header } from "native-base";
 const AppHeader = props => {
   const { title, titleStyle, showBackButton, navigation } = props;
   return (
-    <Header style={HeaderStyle.parentContainer}>
+    <View style={HeaderStyle.parentContainer}>
       <StatusBar barStyle="light-content" />
 
       <View
@@ -39,7 +39,7 @@ const AppHeader = props => {
         </View>
         <View style={{ flex: 0.5 }}></View>
       </View>
-    </Header>
+    </View>
   );
 };
 

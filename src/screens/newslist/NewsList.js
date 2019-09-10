@@ -13,7 +13,7 @@ export class NewsList extends Component<Props> {
     super(props);
     this.state = {
       newsList: [],
-      refresing:false
+      refresing: false
     };
   }
 
@@ -34,26 +34,29 @@ export class NewsList extends Component<Props> {
     }
   }
 
-  openNewsDetail(newsItem){
-    this.props.navigation.navigate("NewsDetail",{newsItem:newsItem});
+  openNewsDetail(newsItem) {
+    this.props.navigation.navigate("NewsDetail", { newsItem: newsItem });
   }
 
   render() {
     const { navigation, isFetching } = this.props;
-    const { newsList,refresing } = this.state;
+    const { newsList, refresing } = this.state;
     return (
       <View style={{ flex: 1 }}>
         <AppHeader navigation={navigation} />
         <Loader loading={isFetching} />
-        <View style={{ flex: 1, }}>
+        <View style={{ flex: 1 }}>
           <FlatList
             data={newsList}
             renderItem={({ item, index }) => (
-              <NewsListItem newsItem={item} index={index} openNewsDetail={newsItem=>this.openNewsDetail(newsItem)} />
+              <NewsListItem
+                newsItem={item}
+                index={index}
+                openNewsDetail={newsItem => this.openNewsDetail(newsItem)}
+              />
             )}
             refreshing={refresing}
-
-            onRefresh={()=>{
+            onRefresh={() => {
               getNewsList({ since: 1 });
             }}
           />

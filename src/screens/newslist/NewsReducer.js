@@ -11,13 +11,14 @@ const initialState = {
 export default function newsReducer(state = initialState, action = {}) {
   switch (action.type) {
     case types.GET_NEWS_LIST_INPROGRESS:
-      return {
+      let data = {
         ...state,
         data: {},
         success: false,
         failure: false,
         isFetching: true
       };
+      return data;
     case types.GET_NEWS_LIST_SUCCESS:
       return {
         ...state,

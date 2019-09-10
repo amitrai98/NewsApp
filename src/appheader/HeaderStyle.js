@@ -4,7 +4,7 @@ const HeaderStyle = StyleSheet.create({
   parentContainer: {
     backgroundColor: "green",
     justifyContent: "flex-end",
-    height: 40
+    height: "10%"
   },
 
   titleDefaultStyle: {

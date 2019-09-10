@@ -1,4 +1,4 @@
-import { put, takeLatest } from "redux-saga/effects";
+import { put, takeEvery } from "redux-saga/effects";
 import * as types from "./NewsActions";
 import ApiHandler from "../../networkhandler/ApiHandler";
 import ApiConst from "../../networkhandler/ApiConst";
@@ -19,5 +19,5 @@ export function* handleGetNewsList(action) {
 }
 
 export function* watchGetNewsListRequest() {
-  yield takeLatest(types.GET_NEWS_LIST, handleGetNewsList);
+  yield takeEvery(types.GET_NEWS_LIST, handleGetNewsList);
 }
