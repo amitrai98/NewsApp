@@ -9,8 +9,8 @@ This is a demo app that fetch News articles from a server and show them in a lis
 Stest To build the app :-
 1> Clone this repository.
 2> Move to the project directory and run npm install from the root directory.
-3> As this project is on react native version 59 you will need to links some of the library like, react-native-getsture-handler
-4> Once linking is done run react-native run-ios
+3> As this project is on react native version 59 you will need to links some of the library like, react-native-getsture-handler https://kmagiera.github.io/react-native-gesture-handler/docs/getting-started.html 
+4> Once linking is done run react-native run-android
 
 Testing the app
-1> npm test Utility-test.js
+1> npm test native-test.js
